@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shakeel Traders Group - Metal Recycling Specialists</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #111;
+        color: #e0e0e0;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .container {
+        width: 85%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #333;
+        text-align: center;
+      }
+
+      .company-title {
+        color: #cccc33;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .company-subtitle {
+        font-size: 1rem;
+        color: #aaa;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      nav ul li {
+        margin: 5px;
+        background-color: #222;
+        padding: 8px 15px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      nav ul li:hover {
+        background-color: #333;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #cccc33;
+        font-weight: 500;
+      }
+
+      a {
+        color: #aaa;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #cccc33;
+      }
+
+      /* Hero section */
+      .hero-section {
+        background-color: #111;
+        padding: 40px;
+        margin: 30px 0 0 0;
+        border-radius: 8px 8px 0 0;
+        border: 1px solid #333;
+        border-bottom: none;
+        text-align: center;
+      }
+
+      .hero-section h2 {
+        font-size: 3rem;
+        color: #cccc33;
+        margin-bottom: 20px;
+      }
+
+      .hero-section p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #cccc33;
+        color: #111;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #dada44;
+        transform: translateY(-3px);
+      }
+
+      /* Stats section */
+      .stats-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        padding: 40px;
+        background-color: #1a1a1a;
+        border-radius: 0 0 8px 8px;
+        border: 1px solid #333;
+        border-top: none;
+        margin-bottom: 50px;
+      }
+
+      .stat-card {
+        text-align: center;
+      }
+
+      .stat-card h3 {
+        font-size: 3rem;
+        color: #cccc33;
+        margin-bottom: 10px;
+      }
+
+      .stat-card p {
+        color: #aaa;
+        font-size: 1.1rem;
+      }
+
+      /* About section */
+      .section-title {
+        font-size: 2.5rem;
+        color: #cccc33;
+        margin: 40px 0 30px;
+        text-align: center;
+      }
+
+      .about-section {
+        background-color: #1a1a1a;
+        padding: 40px;
+        border-radius: 8px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      .about-section p {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      /* Materials section */
+      .materials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 35px;
+        margin: 40px 0;
+      }
+
+      /* Material card styling */
+      .material-card {
+        background-color: #1a1a1a;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .material-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .material-img {
+        width: 100%;
+        height: 200px;
+        background-color: #222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 3px solid #cccc33;
+      }
+
+      .material-title {
+        color: #cccc33;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      }
+
+      .material-info {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .material-info h3 {
+        margin-bottom: 10px;
+        color: #cccc33;
+        text-align: center;
+      }
+
+      .material-info p {
+        color: #bbb;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .cta {
+        background-color: #1a1a1a;
+        padding: 60px 40px;
+        border-radius: 8px;
+        text-align: center;
+        margin: 60px 0;
+      }
+
+      .cta h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #cccc33;
+      }
+
+      .cta p {
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      footer {
+        background-color: #1a1a1a;
+        padding: 40px 0 20px;
+        margin-top: 50px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-column {
+        text-align: center;
+      }
+
+      .footer-column h3 {
+        color: #cccc33;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      .footer-column p {
+        color: #aaa;
+        margin-bottom: 10px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .footer-column a {
+        color: #aaa;
+        margin-bottom: 10px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .footer-column a:hover {
+        color: #cccc33;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        color: #777;
+      }
+
+      /* Fade in animation */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .fade-in.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .container {
+          width: 95%;
+        }
+
+        header {
+          flex-direction: column;
+        }
+
+        nav ul {
+          margin-top: 20px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        nav ul li {
+          margin: 5px;
+        }
+
+        .hero-section h2 {
+          font-size: 2.2rem;
+        }
+
+        .hero-section p {
+          font-size: 1rem;
+        }
+
+        .stats-section {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .stat-card h3 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .stats-section {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="company-title">SHAKEEL TRADERS GROUP</h1>
+        <p class="company-subtitle">
+          Recyclers, Traders & Exporters of Ferrous & Non-Ferrous Metal Scrap
+        </p>
+        <nav>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#aluminum">Aluminum Scrap</a></li>
+            <li><a href="#copper">Copper Scrap</a></li>
+            <li><a href="#other">Other Scrap</a></li>
+            <li><a href="#history">History</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <h2>Global Metal Recycling Specialists</h2>
+        <p>
+          With over 70 years of industry experience, Shakeel Traders Group has
+          established itself as a leader in the ferrous and non-ferrous metal
+          recycling industry, serving markets worldwide.
+        </p>
+        <a href="#contact" class="btn">Get in Touch</a>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="stats-section">
+        <div class="stat-card">
+          <h3>1951</h3>
+          <p>Year Established</p>
+        </div>
+        <div class="stat-card">
+          <h3>7,000</h3>
+          <p>MT Processed Monthly</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>20+</h3>
+          <p>Global Markets Served</p>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div id="about" class="about-section fade-in">
+        <h2 class="section-title">About Shakeel Traders Group</h2>
+        <p>
+          Shakeel Traders Group, Pakistan is a family owned and operated
+          business. Based in Gujranwala, Pakistan, with international
+          operations, we strive to be a reliable, honest and dynamic partner for
+          US domestic as well as international markets including (but not
+          limited to) the Americas, Europe, UK, Asia, China, India, Pakistan and
+          the Middle East.
+        </p>
+
+        <p>
+          We deliver high standard of quality business to our suppliers and a
+          great value for their money to our buyers in Asia and Far east. We
+          operate 3 yards with furnaces to recycle between 5000 - 7000 MT scrap
+          materials per month, providing the financial backing and stability for
+          global operations.
+        </p>
+
+        <p>
+          We are Bureau of International Recycling (BIR) Gold member and ISO
+          14001-2004 and ISO 9001-2000 certified. Our company also strives for
+          being environmentally friendly and operates under the guidelines set
+          forth by the Environmental Protection Agency under the Government of
+          Pakistan.
+        </p>
+      </div>
+
+      <!-- History Section -->
+      <div id="history" class="about-section fade-in">
+        <h2 class="section-title">Our Rich History</h2>
+        <p>
+          Shakeel Traders Group Pakistan was founded in 1951 by Muhammad
+          Siddique as a very small scale local brokerage firm specializing in
+          all kinds of scrap materials in Gujranwala, Pakistan. Through his
+          honesty and integrity Muhammad Siddique grew his clientele from small
+          scale factories to large industries in Pakistan.
+        </p>
+
+        <p>
+          His son Muhammad Shakeel joined the business in early 1973 and grew it
+          worldwide. The company started importing non-ferrous scrap materials
+          from Europe and the United Kingdom. Mostly the business consisted of
+          buying the scrap materials from these countries and selling it
+          domestically in the Pakistani scrap market where it was smelted and
+          used in various industrial sectors. The company performed the
+          middle-man role till late 70's.
+        </p>
+
+        <p>
+          Through years of trading Muhammad Shakeel, grew the business to
+          include Europe and the United Kingdom to the United States, Canada,
+          Scandinavia, Eastern Europe and Middle East. The company started
+          dealing with ferrous scrap in addition to non-ferrous scrap only.
+        </p>
+
+        <p>
+          In the early 80's the company made a big investment and purchased 300
+          acres of land, where they constructed their own yards to store the
+          scrap material. Additionally they put up furnaces to process some of
+          the materials themselves. Muhammad Shakeel not only headed Shakeel
+          Traders Group, but held various social and business leadership
+          position including The Chairman of National Smelters and Recyclers
+          Association, Pakistan as well as The President of Gujranwala Chamber
+          of Commerce and Industry.
+        </p>
+      </div>
+
+      <!-- Aluminum Scrap Section -->
+      <div id="aluminum" class="fade-in">
+        <h2 class="section-title">Aluminum Scrap</h2>
+        <div class="materials-grid">
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Concentric Cable</h3>
+            </div>
+            <div class="material-info">
+              <h3>Concentric Cable</h3>
+              <p>
+                Aluminum/Copper mix metallics concentric cable, clean and ready
+                for processing.
+              </p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Insulated Al Wire</h3>
+            </div>
+            <div class="material-info">
+              <h3>Insulated Al Wire</h3>
+              <p>High-quality insulated aluminum wire, sorted and bundled.</p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Cleaned Al Wheels</h3>
+            </div>
+            <div class="material-info">
+              <h3>Cleaned Al Wheels</h3>
+              <p>
+                Clean aluminum alloy wheels, sorted and ready for processing.
+              </p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">8011 Al Sheet</h3>
+            </div>
+            <div class="material-info">
+              <h3>8011 Al Sheet</h3>
+              <p>
+                Premium aluminum sheet suitable for various industrial
+                applications.
+              </p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">8020 Al Foil</h3>
+            </div>
+            <div class="material-info">
+              <h3>8020 Al Foil</h3>
+              <p>
+                Recycled aluminum foil, compressed into bales for efficient
+                transport.
+              </p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">UBC & Bottle Caps</h3>
+            </div>
+            <div class="material-info">
+              <h3>UBC & Bottle Caps</h3>
+              <p>
+                Used beverage cans and bottle caps, sorted and compressed for
+                recycling.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p style="text-align: center; margin: 40px 0">
+          We also handle ACSR, EC50, Aluminum Litho Sheet (Tablet), Foil, New
+          Aluminum foil, Taintabor, Tense, Clean Alloy Wheels, 6061 Alloy
+          Extrusions, Foam Sheet, and more.
+        </p>
+      </div>
+
+      <!-- Copper Scrap Section -->
+      <div id="copper" class="fade-in">
+        <h2 class="section-title" style="margin-top: 60px">Copper Scrap</h2>
+        <div class="materials-grid">
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Copper Lead Cable</h3>
+            </div>
+            <div class="material-info">
+              <h3>Copper Lead Cable</h3>
+              <p>
+                High-grade copper lead cable, clean and ready for processing.
+              </p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Burnt Copper Wire (Berry)</h3>
+            </div>
+            <div class="material-info">
+              <h3>Burnt Copper Wire (Berry)</h3>
+              <p>
+                Processed burnt copper wire, also known as Berry in the
+                industry.
+              </p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Bright & Shinny (Millberry)</h3>
+            </div>
+            <div class="material-info">
+              <h3>Bright & Shinny (Millberry)</h3>
+              <p>
+                Premium quality bright copper wire, also known as Millberry.
+              </p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Copper Tubbing (Candy)</h3>
+            </div>
+            <div class="material-info">
+              <h3>Copper Tubbing (Candy)</h3>
+              <p>
+                Clean copper tubing, also referred to as Candy in the recycling
+                industry.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p style="text-align: center; margin: 40px 0">
+          We also handle #1, #2 Copper, Wire/berry, Tubing/Candy, Yellow
+          Brass/Honey, insulated copper wire, Birch Cliff and more copper
+          variations.
+        </p>
+      </div>
+
+      <!-- Other Scrap Section -->
+      <div id="other" class="fade-in">
+        <h2 class="section-title" style="margin-top: 60px">
+          Other Scrap Materials
+        </h2>
+        <div class="materials-grid">
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Automotive Alternators</h3>
+            </div>
+            <div class="material-info">
+              <h3>Automotive Alternators</h3>
+              <p>
+                Used automotive alternators, sorted and ready for material
+                recovery.
+              </p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Mixed Electric Motor</h3>
+            </div>
+            <div class="material-info">
+              <h3>Mixed Electric Motor</h3>
+              <p>
+                Assorted electric motors from various appliances and industrial
+                equipment.
+              </p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Automotive Starters</h3>
+            </div>
+            <div class="material-info">
+              <h3>Automotive Starters</h3>
+              <p>
+                Used automotive starters, sorted and prepared for recycling.
+              </p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Al Cased Motors</h3>
+            </div>
+            <div class="material-info">
+              <h3>Al Cased Motors</h3>
+              <p>
+                Electric motors with aluminum casings, processed for material
+                recovery.
+              </p>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-img">
+              <h3 class="material-title">Sealed Units (Compressors)</h3>
+            </div>
+            <div class="material-info">
+              <h3>Sealed Units (Compressors)</h3>
+              <p>
+                Refrigerator/AC compressor units, prepared for environmentally
+                safe processing.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p style="text-align: center; margin: 40px 0">
+          We also handle Ferrous scrap (Shredded 210-211, HMS 1 and 2, Rails),
+          Lead scrap (Remelted Lead Ingot, Lead Battery Plates Scrap),
+          Transformers scrap, and more.
+        </p>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="cta fade-in">
+        <h3>Partner With Us</h3>
+        <p>
+          Whether you're looking to sell your scrap materials or source quality
+          recycled metals for your manufacturing needs, Shakeel Traders Group is
+          your trusted partner. With decades of experience and a global network,
+          we ensure fair prices and reliable service.
+        </p>
+        <a href="#contact" class="btn">Contact Us Today</a>
+      </div>
+
+      <!-- Contact Section -->
+      <div id="contact" class="fade-in">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Pakistan Office</h3>
+            <p>Shakeel Traders Group, Pakistan</p>
+            <p>36 Bajwa Road Link GT Road</p>
+            <p>Gujranwala, Pakistan</p>
+          </div>
+          <div class="footer-column">
+            <h3>International Inquiries</h3>
+            <p>Shakeel Traders Group</p>
+            <p>International Division</p>
+            <p>Email: <span>shaheeranwar824@gmail.com</span></p>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <p>About Us</p>
+            <p>Aluminum Scrap</p>
+            <p>Copper Scrap</p>
+            <p>Other Scrap</p>
+            <p>Our History</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="copyright">
+          <p>&copy; 2025 Shakeel Traders Group. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // JavaScript for fade-in animations
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        fadeElements.forEach((element) => {
+          observer.observe(element);
+        });
+
+        // Navigation smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
